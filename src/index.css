@@ -1,0 +1,57 @@
+body {
+  font-family: "Assistant", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: auto;
+  max-width: 38rem;
+  padding: 2rem;
+}
+
+.task{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-style: solid;
+  border-width: 0.5px;
+  border-radius: 1px;
+  border-color:lightgray;
+  border-left-width: 3px;
+  border-left-color: teal;
+  padding: 1rem 1rem;
+  
+}
+
+.task li{
+  flex: 1;
+  cursor: pointer;
+  font-weight: bold;
+  color: black;
+}
+
+.due-display{
+  font-weight: lighter;
+  color:lightslategrey;
+}
+
+a.task-title{
+  flex: 1;
+}
+
+i.icon-red{
+  color: maroon;
+}
+
+
+.add-collapsible-header{
+  border-width: 0px;
+  border-radius: 2px;
+  background-color: teal;
+  color: white;
+}
+
+select.priority{
+  height: 2.6rem;
+  border-color: green;
+}
+
+.secondary-content{
+  cursor: pointer;
+}

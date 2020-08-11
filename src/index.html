@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>My To-do</title>
+    
+    <!--RENDER.JS-->
+    <script defer src="render.js"></script>
+
+    <!-- MATERIALIZE CSS-->
+    <!-- compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.collapsible');
+        var instances = M.Collapsible.init(elems);
+      });
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems);
+      });
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems);
+      });
+    </script>
+
+    <!--FONTS-->
+    <link href="https://fonts.googleapis.com/css2?family=Assistant&display=swap" rel="stylesheet">
+
+    <!-- my css file -->
+    <link rel="stylesheet" href="index.css">
+    
+  </head>
+  
+  <body>
+    <h1><div class="title">My To-do</div></h1>
+
+    <!--ADD TASK COLLAPSIBLE-->
+    <ul class="add-collapsible collapsible">
+      <li>
+        <div class="add-collapsible-header collapsible-header"><i class="material-icons">add</i>Add Task</div>
+        <div class="task-body collapsible-body"><span>
+          <form class="col s12">
+            
+            <div class="row">
+              <!--task name-->
+              <div class="row input-field col s12">
+                  <input class="task-name" type="text">
+                  <label for="task-name">Task</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <!--due date-->
+              <div class="row input-field col s6">
+                <input id="due-date" class="due-date" type="date">
+                <label for="due-date">Due</label>
+              </div>
+
+              <!--priority-->
+              <div class="row col s6">
+                <label class="prioLabel">Priority</label>
+                <select class="priority browser-default" onchange="changePriorityColor()">
+                  <option value="low" selected>Low</option>
+                  <option value="med">Medium</option>
+                  <option value="high">High</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="row">
+              <!--notes-->
+              <div class="input-field col s12">
+                  <textarea id="notes" class="notes materialize-textarea"></textarea>
+                  <label for="notes">Notes</label>
+              </div>
+            </div>
+
+
+            <div class="row center-align">
+                <a class="cancel-task-btn waves-effect waves-light btn-large" style="background-color: #cc0000">Cancel</a>
+                <a class="add-task-btn waves-effect waves-light btn-large">Add</a>
+            </div>
+          </form>
+        </span></div>
+      </li>
+    </ul>
+
+    <!--TASK CONTAINER-->
+    <div class="task-container">
+      <ul class="task-ul">
+      </ul>
+    </div>
+    
+    <!--NOTES MODALS-->
+    <div class="notes-modals">
+      <div id="modal-display" class="modal">
+        <div class="modal-content">
+          <h5>Notes</h5>
+          <p id="note-content">No notes were made for this task.</p>
+        </div>
+      </div>
+    </div>
+
+
+
+    
+  </body>
+</html>
